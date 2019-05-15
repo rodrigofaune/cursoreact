@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import HeroFilter from '../../components/HeroFilter'
 import HeroTable from '../../components/HeroTable'
-
+//lalala
 export default class HeroContainer extends Component {
   constructor (props) {
     super(props)
