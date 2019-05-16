@@ -1,19 +1,20 @@
 import React from 'react'
 import HeroRow from '../HeroRow'
+import '../../bootstrap.css'
 
 const HeroTable = ({ heroes, killHero, putRing, resurrectHero, heroUsingRing }) => (
-  <table className="characters-table">
+  <table className='table table-dark table-striped text-center'>
     <tbody>
-      <tr className="character-row">
+      <tr>
         <th>Name</th>
         <th>Race</th>
         <th>Age</th>
         <th>Weapon</th>
-        <th></th>
+        <th>Action</th>
       </tr>
       {heroes.map((hero, index) => (
         <HeroRow
-          key={index} 
+          key={index}
           hero={hero}
           heroUsingRing={heroUsingRing}
           killHero={() => killHero(hero.id)}

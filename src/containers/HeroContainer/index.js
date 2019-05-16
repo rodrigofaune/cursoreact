@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import HeroFilter from '../../components/HeroFilter'
 import HeroTable from '../../components/HeroTable'
-//lalala
+import '../../bootstrap.css'
+
 export default class HeroContainer extends Component {
   constructor (props) {
     super(props)
@@ -74,7 +75,7 @@ export default class HeroContainer extends Component {
   }
 
   resurrectHero (heroIndex) {
-    const { heroesEntities} = this.state
+    const { heroesEntities } = this.state
 
     this.setState({
       heroesEntities: this.editEntity(heroesEntities, heroIndex, { status: 'alive' }),
@@ -89,9 +90,8 @@ export default class HeroContainer extends Component {
       usingRingIndex: null
     })
   }
-  
-  render() {
-    console.log('SE RENDERIZO')
+
+  render () {
     const { filterText, heroesList, heroesEntities, usingRingIndex } = this.state
 
     let filteredArray = heroesList.map(heroId => heroesEntities[heroId])
@@ -106,19 +106,17 @@ export default class HeroContainer extends Component {
     }
 
     return (
-      <div className="App">
-        <div className="index">
+      <div className='container'>
+        <div className='row justify-content-md-center'>
           <h2>Fellowship of the Ring</h2>
 
-          {usingRingIndex && <button onClick={this.recoverRing}>Recover Ring</button>}
-
-          <div className="container">
+          <div className='container'>
             <HeroFilter
               placeholder='Search the hero'
               handleInputChange={this.handleInputChange}
               value={filterText}
             />
-
+            ''
             {filteredArray.length === 0 && <div>No heroes...</div>}
 
             {filteredArray.length > 0 && (
@@ -131,6 +129,7 @@ export default class HeroContainer extends Component {
               />
             )}
           </div>
+          {usingRingIndex && <button type='button' class='btn btn-info' onClick={this.recoverRing}>Recover Ring</button>}
         </div>
       </div>
     )
