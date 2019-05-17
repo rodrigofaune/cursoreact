@@ -27,7 +27,7 @@ const HeroRow = ({ hero, killHero, putRing, resurrectHero, heroUsingRing }) => {
         <div>
           {!isDead && <button type='button' onClick={killHero} class='btn btn-danger'>☠ Kill</button>}
           {isDead && <button type='button' onClick={resurrectHero} class='btn btn-primary'>☠ Resurrect Hero</button>}
-          {!heroUsingRing && !isDead && <button type='button' onClick={putRing} class='btn btn-light'>0 Use Ring</button>}
+          {!heroUsingRing && !isDead && <button type='button' onClick={putRing} class='btn btn-light'>💍 Use Ring</button>}
         </div>
       </td>
     </tr>
